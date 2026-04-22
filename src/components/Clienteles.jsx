@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { IcoRestaurant, IcoTransformation, IcoIndustriel } from './Pictograms';
+
+const BASE = import.meta.env.BASE_URL;
 
 const segments = [
   {
@@ -12,6 +15,7 @@ const segments = [
       'Traiteurs et services alimentaires',
     ],
     Icon: IcoRestaurant,
+    image: `${BASE}images/clienteles/restaurants.jpg`,
   },
   {
     tag: '02',
@@ -24,6 +28,7 @@ const segments = [
       'Produits fins et spécialités',
     ],
     Icon: IcoTransformation,
+    image: `${BASE}images/clienteles/transformation.jpg`,
   },
   {
     tag: '03',
@@ -36,8 +41,26 @@ const segments = [
       'Exportateurs et e-commerce',
     ],
     Icon: IcoIndustriel,
+    image: null,
   },
 ];
+
+function Backdrop({ image }) {
+  const [failed, setFailed] = useState(!image);
+  if (!image || failed) return null;
+  return (
+    <>
+      <img
+        src={image}
+        alt=""
+        onError={() => setFailed(true)}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover opacity-50 transition-all duration-[1400ms] ease-out group-hover:opacity-70 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/85 to-ink-900/55 transition-all duration-700 group-hover:from-ink-900/95 group-hover:via-ink-900/75" />
+    </>
+  );
+}
 
 export default function Clienteles() {
   return (
@@ -64,6 +87,8 @@ export default function Clienteles() {
                 className="reveal group relative bg-ink-900 rounded-[4px] overflow-hidden min-h-[520px] md:min-h-[580px] flex flex-col"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
+                <Backdrop image={s.image} />
+
                 <div
                   className="absolute inset-0 opacity-[0.05] pointer-events-none"
                   style={{

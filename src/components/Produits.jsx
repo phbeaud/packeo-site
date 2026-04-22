@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   IcoBoite,
   IcoContenant,
@@ -8,43 +9,74 @@ import {
   IcoSurMesure,
 } from './Pictograms';
 
+const BASE = import.meta.env.BASE_URL;
+
 const produits = [
   {
     title: 'Boîtes et cartons',
     items: ['Ondulé simple et double', 'RSC, die-cut, mailer', 'Formats personnalisés'],
     Icon: IcoBoite,
+    image: null,
   },
   {
     title: 'Contenants alimentaires',
     items: ['Carton, pulpe, PP, PET', 'Chaud, froid, congélation', 'Certifications contact alimentaire'],
     Icon: IcoContenant,
+    image: `${BASE}images/produits/contenants.jpg`,
   },
   {
     title: 'Sacs et pellicules',
     items: ['LDPE, HDPE, compostables', 'Rouleaux, sachets, gousset', 'Impression personnalisée'],
     Icon: IcoSac,
+    image: `${BASE}images/produits/sacs.jpg`,
   },
   {
     title: 'Sous vide',
     items: ['Sacs lisses et gaufrés', 'Rouleaux industriels', 'Machines et consommables'],
     Icon: IcoSousVide,
+    image: `${BASE}images/produits/sous-vide.jpg`,
   },
   {
     title: 'Pots, verres et couvercles',
     items: ['Verre, PET, PP', 'Capsules et bouchons', 'Étiquetage disponible'],
     Icon: IcoPot,
+    image: `${BASE}images/produits/pots.jpg`,
   },
   {
     title: 'Protection industrielle',
     items: ['Pellicules étirables', 'Cerclage et sangles', 'Coussins et calage'],
     Icon: IcoProtection,
+    image: null,
   },
   {
     title: 'Sur mesure',
     items: ['Développement manufacturier', 'Prototypage et validation', 'Production dédiée'],
     Icon: IcoSurMesure,
+    image: null,
   },
 ];
+
+function Visual({ image, Icon }) {
+  const [failed, setFailed] = useState(!image);
+  if (!image || failed) {
+    return (
+      <div className="absolute inset-0 flex items-center justify-center bg-bone">
+        <div className="w-20 h-20 md:w-24 md:h-24">
+          <Icon className="w-full h-full" />
+        </div>
+      </div>
+    );
+  }
+  return (
+    <img
+      src={image}
+      alt=""
+      onError={() => setFailed(true)}
+      loading="lazy"
+      className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+    />
+  );
+}
 
 export default function Produits() {
   return (
@@ -71,23 +103,21 @@ export default function Produits() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink-100 border border-ink-100">
-          {produits.map((p, i) => {
-            const Icon = p.Icon;
-            return (
-              <a
-                key={p.title}
-                href="#contact"
-                className="reveal group relative bg-white p-8 md:p-10 transition-colors duration-500 hover:bg-bone flex flex-col min-h-[320px]"
-                style={{ transitionDelay: `${(i % 3) * 80}ms` }}
-              >
-                <span className="absolute top-8 right-8 md:top-10 md:right-10 text-[11px] uppercase tracking-[0.22em] text-ink-300 font-medium">
+          {produits.map((p, i) => (
+            <a
+              key={p.title}
+              href="#contact"
+              className="reveal group relative bg-white flex flex-col transition-colors duration-500 hover:bg-bone overflow-hidden"
+              style={{ transitionDelay: `${(i % 3) * 80}ms` }}
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Visual image={p.image} Icon={p.Icon} />
+                <span className="absolute top-5 right-5 text-[10px] uppercase tracking-[0.22em] text-white font-medium px-2.5 py-1 rounded-full bg-ink-900/60 backdrop-blur-sm">
                   0{i + 1}
                 </span>
+              </div>
 
-                <div className="w-14 h-14 md:w-16 md:h-16 mb-10 md:mb-12 transition-transform duration-500 group-hover:-translate-y-0.5">
-                  <Icon className="w-full h-full" />
-                </div>
-
+              <div className="p-8 md:p-10 flex flex-col flex-1">
                 <h3 className="font-display text-xl md:text-2xl font-medium text-ink-900 mb-5 tracking-tight">
                   {p.title}
                 </h3>
@@ -102,7 +132,6 @@ export default function Produits() {
                     </li>
                   ))}
                 </ul>
-
                 <span className="mt-auto inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ember font-medium transition-all duration-300 group-hover:gap-3">
                   Demander les formats
                   <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
@@ -114,9 +143,9 @@ export default function Produits() {
                     />
                   </svg>
                 </span>
-              </a>
-            );
-          })}
+              </div>
+            </a>
+          ))}
         </div>
       </div>
     </section>
