@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(rm -f App.css assets/react.svg assets/vite.svg assets/hero.png)",
+      "Bash(ls -la src)",
+      "Bash(npm run *)",
+      "Bash(lsof -ti:5173)"
+    ]
+  }
+}
