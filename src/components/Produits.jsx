@@ -16,31 +16,31 @@ const produits = [
     title: 'Boîtes et cartons',
     items: ['Ondulé simple et double', 'RSC, die-cut, mailer', 'Formats personnalisés'],
     Icon: IcoBoite,
-    image: null,
+    image: `${BASE}images/produits/reduire-sur-emballage.jpg`,
   },
   {
     title: 'Contenants alimentaires',
     items: ['Carton, pulpe, PP, PET', 'Chaud, froid, congélation', 'Certifications contact alimentaire'],
     Icon: IcoContenant,
-    image: `${BASE}images/produits/contenants.jpg`,
+    image: `${BASE}images/produits/1023large.webp`,
   },
   {
     title: 'Sacs et pellicules',
     items: ['LDPE, HDPE, compostables', 'Rouleaux, sachets, gousset', 'Impression personnalisée'],
     Icon: IcoSac,
-    image: `${BASE}images/produits/sacs.jpg`,
+    image: `${BASE}images/produits/Emb_123-128_CROP.jpg`,
   },
   {
     title: 'Sous vide',
     items: ['Sacs lisses et gaufrés', 'Rouleaux industriels', 'Machines et consommables'],
     Icon: IcoSousVide,
-    image: `${BASE}images/produits/sous-vide.jpg`,
+    image: `${BASE}images/produits/confezionamento-alimentare.i27211-kaxmrlR-w904-h452-l3.jpg`,
   },
   {
     title: 'Pots, verres et couvercles',
     items: ['Verre, PET, PP', 'Capsules et bouchons', 'Étiquetage disponible'],
     Icon: IcoPot,
-    image: `${BASE}images/produits/pots.jpg`,
+    image: `${BASE}images/produits/verre-conso.jpg`,
   },
   {
     title: 'Protection industrielle',
@@ -52,7 +52,7 @@ const produits = [
     title: 'Sur mesure',
     items: ['Développement manufacturier', 'Prototypage et validation', 'Production dédiée'],
     Icon: IcoSurMesure,
-    image: null,
+    image: `${BASE}images/produits/hero-banner.png`,
   },
 ];
 

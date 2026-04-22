@@ -28,7 +28,7 @@ const segments = [
       'Produits fins et spécialités',
     ],
     Icon: IcoTransformation,
-    image: `${BASE}images/clienteles/transformation.jpg`,
+    image: `${BASE}images/produits/6c2bb86aa8cc8809b08564bee8bddddc.jpg`,
   },
   {
     tag: '03',
