@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { LogoLockup } from './Logo';
 
 export default function Footer() {
@@ -21,12 +22,11 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="space-y-3 text-sm text-ink-200">
-              <li><a href="#positionnement" className="hover:text-white transition-colors">Positionnement</a></li>
-              <li><a href="#approche" className="hover:text-white transition-colors">Approche</a></li>
-              <li><a href="#operations" className="hover:text-white transition-colors">Opérations</a></li>
-              <li><a href="#produits" className="hover:text-white transition-colors">Produits</a></li>
-              <li><a href="#modele" className="hover:text-white transition-colors">Modèle</a></li>
-              <li><a href="#capacites" className="hover:text-white transition-colors">Capacités</a></li>
+              <li><Link to="/" className="hover:text-white transition-colors">Accueil</Link></li>
+              <li><Link to="/produits" className="hover:text-white transition-colors">Produits</Link></li>
+              <li><Link to="/approche" className="hover:text-white transition-colors">Approche</Link></li>
+              <li><Link to="/#modele" className="hover:text-white transition-colors">Modèle d'affaires</Link></li>
+              <li><Link to="/#clienteles" className="hover:text-white transition-colors">Clientèles</Link></li>
             </ul>
           </div>
 
@@ -45,7 +45,7 @@ export default function Footer() {
                   approvisionnement@packeo.ca
                 </a>
               </li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Recevoir une analyse</a></li>
+              <li><Link to="/#contact" className="hover:text-white transition-colors">Recevoir une analyse</Link></li>
             </ul>
           </div>
         </div>
