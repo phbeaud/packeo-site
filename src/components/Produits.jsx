@@ -56,7 +56,7 @@ const produits = [
   },
 ];
 
-function Visual({ image, Icon }) {
+function Visual({ image, Icon, alt }) {
   const [failed, setFailed] = useState(!image);
   if (!image || failed) {
     return (
@@ -70,7 +70,7 @@ function Visual({ image, Icon }) {
   return (
     <img
       src={image}
-      alt=""
+      alt={alt}
       onError={() => setFailed(true)}
       loading="lazy"
       className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
@@ -111,7 +111,7 @@ export default function Produits() {
               style={{ transitionDelay: `${(i % 3) * 80}ms` }}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <Visual image={p.image} Icon={p.Icon} />
+                <Visual image={p.image} Icon={p.Icon} alt={`${p.title} — emballage Packeo`} />
                 <span className="absolute top-5 right-5 text-[10px] uppercase tracking-[0.22em] text-white font-medium px-2.5 py-1 rounded-full bg-ink-900/60 backdrop-blur-sm">
                   0{i + 1}
                 </span>

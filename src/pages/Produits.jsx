@@ -2,8 +2,18 @@ import PageHero from '../components/PageHero';
 import Produits from '../components/Produits';
 import Conveyor from '../components/Conveyor';
 import ContactCTA from '../components/ContactCTA';
+import useSEO from '../hooks/useSEO';
 
 export default function ProduitsPage() {
+  useSEO({
+    title: "Produits d'emballage industriel | Packeo — Boîtes, contenants, sous vide",
+    description:
+      "Catalogue complet d'emballages industriels : boîtes et cartons, contenants alimentaires, sacs et pellicules, sous vide, pots et verres, protection industrielle, solutions sur mesure. Prix manufacturier direct.",
+    keywords:
+      "boîtes carton, contenants alimentaires, sacs kraft, sous vide, pots verre, pellicules étirables, emballage sur mesure, emballage industriel Québec",
+    path: '/produits',
+  });
+
   return (
     <>
       <PageHero

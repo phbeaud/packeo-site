@@ -4,8 +4,18 @@ import Showcase from '../components/Showcase';
 import Operations from '../components/Operations';
 import Capacites from '../components/Capacites';
 import ContactCTA from '../components/ContactCTA';
+import useSEO from '../hooks/useSEO';
 
 export default function ApprochePage() {
+  useSEO({
+    title: 'Notre approche | Packeo — Chaîne d\'approvisionnement structurée',
+    description:
+      "Comment Packeo élimine les intermédiaires de votre chaîne d'approvisionnement : importation directe, consolidation logistique, entreposage stratégique, livraisons planifiées. Quatre leviers pour réduire vos coûts réels.",
+    keywords:
+      "chaîne approvisionnement emballage, importation directe manufacturier, consolidation logistique, entreposage emballage Québec, distribution emballage planifiée",
+    path: '/approche',
+  });
+
   return (
     <>
       <PageHero

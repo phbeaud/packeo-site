@@ -45,14 +45,14 @@ const segments = [
   },
 ];
 
-function Backdrop({ image }) {
+function Backdrop({ image, alt }) {
   const [failed, setFailed] = useState(!image);
   if (!image || failed) return null;
   return (
     <>
       <img
         src={image}
-        alt=""
+        alt={alt || ''}
         onError={() => setFailed(true)}
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover opacity-50 transition-all duration-[1400ms] ease-out group-hover:opacity-70 group-hover:scale-105"
@@ -87,7 +87,7 @@ export default function Clienteles() {
                 className="reveal group relative bg-ink-900 rounded-[4px] overflow-hidden min-h-[520px] md:min-h-[580px] flex flex-col"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <Backdrop image={s.image} />
+                <Backdrop image={s.image} alt={`${s.title} — clientèle Packeo`} />
 
                 <div
                   className="absolute inset-0 opacity-[0.05] pointer-events-none"
