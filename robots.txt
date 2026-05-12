@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://phbeaud.github.io/packeo-site/sitemap.xml
+Sitemap: https://packeo.ca/sitemap.xml
