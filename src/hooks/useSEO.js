@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_URL = 'https://phbeaud.github.io/packeo-site';
+const SITE_URL = 'https://packeo.ca';
 const DEFAULT_IMAGE = `${SITE_URL}/images/produits/reduire-sur-emballage.jpg`;
 
 /**

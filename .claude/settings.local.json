@@ -11,7 +11,8 @@
       "Bash(open \"/Users/philippe/Library/Mobile Documents/com~apple~CloudDocs/Site web Packeo/public/images\")",
       "Bash(git add *)",
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Bilingual FR/EN with /:lang/ routing, hreflang tags, and language toggle\")",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Migrate to packeo.ca custom domain \\(base, CNAME, URLs, SPA redirect\\)\")"
     ]
   }
 }
