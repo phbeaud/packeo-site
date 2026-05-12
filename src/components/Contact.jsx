@@ -20,7 +20,7 @@ export default function Contact() {
         `${t.contact.form.interest}: ${data.get('interet') || ''}\n\n` +
         `${t.contact.form.message}:\n${data.get('message') || ''}`
     );
-    window.location.href = `mailto:approvisionnement@packeo.ca?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@packeo.ca?subject=${subject}&body=${body}`;
     setSubmitted(true);
   };
 
@@ -43,8 +43,7 @@ export default function Contact() {
 
             <div className="reveal mt-12 space-y-5" style={{ transitionDelay: '220ms' }}>
               <ContactLine label={t.contact.lines.general} value="info@packeo.ca" href="mailto:info@packeo.ca" />
-              <ContactLine label={t.contact.lines.supply} value="approvisionnement@packeo.ca" href="mailto:approvisionnement@packeo.ca" />
-              <ContactLine label={t.contact.lines.phone} value="+1 (000) 000-0000" href="tel:+10000000000" />
+              <ContactLine label={t.contact.lines.phone} value="418 953-6132" href="tel:+14189536132" />
             </div>
           </div>
 

@@ -35,10 +35,10 @@ export default function ContactCTA({ title, sub }) {
               </svg>
             </LangLink>
             <a
-              href="mailto:approvisionnement@packeo.ca"
+              href="mailto:info@packeo.ca"
               className="inline-flex items-center gap-3 text-sm font-medium text-ink-900 px-6 py-3.5 rounded-full border border-ink-200 hover:border-ink-900 transition-colors duration-300"
             >
-              approvisionnement@packeo.ca
+              info@packeo.ca
             </a>
           </div>
         </div>

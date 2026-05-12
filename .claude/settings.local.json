@@ -12,7 +12,8 @@
       "Bash(git add *)",
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Bilingual FR/EN with /:lang/ routing, hreflang tags, and language toggle\")",
       "Bash(git push *)",
-      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Migrate to packeo.ca custom domain \\(base, CNAME, URLs, SPA redirect\\)\")"
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Migrate to packeo.ca custom domain \\(base, CNAME, URLs, SPA redirect\\)\")",
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Real contact info: info@packeo.ca + 418 953-6132 \\(remove approvisionnement@\\)\")"
     ]
   }
 }

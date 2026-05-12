@@ -39,7 +39,7 @@ export default function Footer() {
                 <a href="mailto:info@packeo.ca" className="hover:text-white transition-colors">info@packeo.ca</a>
               </li>
               <li>
-                <a href="mailto:approvisionnement@packeo.ca" className="hover:text-white transition-colors">approvisionnement@packeo.ca</a>
+                <a href="tel:+14189536132" className="hover:text-white transition-colors">418 953-6132</a>
               </li>
               <li><LangLink to="/#contact" className="hover:text-white transition-colors">{t.footer.links.analysis}</LangLink></li>
             </ul>
