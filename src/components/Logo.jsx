@@ -42,7 +42,7 @@ export function LogoMark({ className = 'w-10 h-10', variant = 'dark' }) {
   );
 }
 
-export function LogoLockup({ className = '', variant = 'dark', showTagline = false }) {
+export function LogoLockup({ className = '', variant = 'dark', tagline = null }) {
   const isLight = variant === 'light';
   const textColor = isLight ? 'text-white' : 'text-ink-900';
   const accentColor = 'text-ember';
@@ -55,9 +55,9 @@ export function LogoLockup({ className = '', variant = 'dark', showTagline = fal
         <span className={`font-display font-bold tracking-tight leading-none text-[22px] md:text-[26px] ${textColor}`}>
           PACK<span className={accentColor}>E</span>O
         </span>
-        {showTagline && (
+        {tagline && (
           <span className={`mt-1.5 text-[9px] md:text-[10px] uppercase tracking-[0.22em] font-medium ${taglineColor}`}>
-            Emballage au prix manufacturier direct
+            {tagline}
           </span>
         )}
       </div>

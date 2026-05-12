@@ -5,12 +5,13 @@ const DEFAULT_IMAGE = `${SITE_URL}/images/produits/reduire-sur-emballage.jpg`;
 
 /**
  * Per-page SEO hook — updates title, meta description, Open Graph,
- * Twitter Card, and canonical tags dynamically.
+ * Twitter Card, canonical, and hreflang tags dynamically.
  */
-export default function useSEO({ title, description, image, path, keywords }) {
+export default function useSEO({ title, description, image, path, keywords, lang = 'fr' }) {
   useEffect(() => {
     const fullUrl = `${SITE_URL}${path || ''}`;
     const imgUrl = image || DEFAULT_IMAGE;
+    const ogLocale = lang === 'en' ? 'en_CA' : 'fr_CA';
 
     // Title
     if (title) document.title = title;
@@ -19,13 +20,13 @@ export default function useSEO({ title, description, image, path, keywords }) {
     setMeta('description', description);
     if (keywords) setMeta('keywords', keywords);
 
-    // Open Graph (Facebook, LinkedIn, Slack, iMessage...)
+    // Open Graph
     setMeta('og:title', title, 'property');
     setMeta('og:description', description, 'property');
     setMeta('og:image', imgUrl, 'property');
     setMeta('og:url', fullUrl, 'property');
     setMeta('og:type', 'website', 'property');
-    setMeta('og:locale', 'fr_CA', 'property');
+    setMeta('og:locale', ogLocale, 'property');
     setMeta('og:site_name', 'Packeo', 'property');
 
     // Twitter Card
@@ -36,7 +37,16 @@ export default function useSEO({ title, description, image, path, keywords }) {
 
     // Canonical
     setCanonical(fullUrl);
-  }, [title, description, image, path, keywords]);
+
+    // hreflang — link FR <-> EN equivalents
+    if (path) {
+      // Replace current /lang/ prefix with each language to build pairs
+      const stripped = path.replace(/^\/(fr|en)/, '');
+      setHreflang('fr-ca', `${SITE_URL}/fr${stripped}`);
+      setHreflang('en-ca', `${SITE_URL}/en${stripped}`);
+      setHreflang('x-default', `${SITE_URL}/fr${stripped}`);
+    }
+  }, [title, description, image, path, keywords, lang]);
 }
 
 function setMeta(name, content, attr = 'name') {
@@ -55,6 +65,17 @@ function setCanonical(url) {
   if (!el) {
     el = document.createElement('link');
     el.setAttribute('rel', 'canonical');
+    document.head.appendChild(el);
+  }
+  el.setAttribute('href', url);
+}
+
+function setHreflang(lang, url) {
+  let el = document.head.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+  if (!el) {
+    el = document.createElement('link');
+    el.setAttribute('rel', 'alternate');
+    el.setAttribute('hreflang', lang);
     document.head.appendChild(el);
   }
   el.setAttribute('href', url);

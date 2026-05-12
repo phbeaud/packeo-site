@@ -1,54 +1,28 @@
 import { IcoBoite, IcoImportation, IcoEntrepot, IcoLivraison } from './Pictograms';
 import useCountUp from '../hooks/useCountUp';
+import { useT, LangLink } from '../i18n/I18nContext';
 
-const tiles = [
-  {
-    tag: 'Sourcing',
-    title: 'Manufacturiers qualifiés',
-    Icon: IcoBoite,
-    href: '#modele',
-  },
-  {
-    tag: 'Importation',
-    title: 'Consolidation directe',
-    Icon: IcoImportation,
-    href: '#modele',
-  },
-  {
-    tag: 'Entreposage',
-    title: 'Tampon stratégique',
-    Icon: IcoEntrepot,
-    href: '#capacites',
-  },
-  {
-    tag: 'Distribution',
-    title: 'Livraisons planifiées',
-    Icon: IcoLivraison,
-    href: '#capacites',
-  },
-];
+const ICONS = [IcoBoite, IcoImportation, IcoEntrepot, IcoLivraison];
+const HREFS = ['/#modele', '/#modele', '/approche', '/approche'];
 
 export default function Operations() {
+  const { t } = useT();
   return (
     <section id="operations" className="relative bg-white py-28 md:py-40 overflow-hidden">
       <div className="container-page">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 mb-16 md:mb-24">
           <div className="max-w-3xl">
             <div className="section-label mb-8 reveal">
-              <span>Opérations</span>
+              <span>{t.operations.eyebrow}</span>
             </div>
             <h2 className="reveal font-display font-semibold text-display-lg text-ink-900 tracking-ultra-tight">
-              De la ligne de production
+              {t.operations.titleA}
               <br />
-              <span className="text-ink-400">jusqu'à votre quai de réception.</span>
+              <span className="text-ink-400">{t.operations.titleB}</span>
             </h2>
           </div>
-          <p
-            className="reveal text-ink-500 text-base md:text-lg max-w-sm leading-relaxed"
-            style={{ transitionDelay: '120ms' }}
-          >
-            Une chaîne visible, documentée et maîtrisée — de la fabrication à la
-            livraison, sans zone grise.
+          <p className="reveal text-ink-500 text-base md:text-lg max-w-sm leading-relaxed" style={{ transitionDelay: '120ms' }}>
+            {t.operations.sub}
           </p>
         </div>
       </div>
@@ -62,16 +36,12 @@ export default function Operations() {
             loop
             playsInline
           >
-            <source
-              src="https://assets.mixkit.co/videos/preview/mixkit-warehouse-operator-moving-boxes-on-a-cart-4837-large.mp4"
-              type="video/mp4"
-            />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-warehouse-operator-moving-boxes-on-a-cart-4837-large.mp4" type="video/mp4" />
           </video>
           <div
             className="absolute inset-0 bg-ink-900"
             style={{
-              backgroundImage:
-                'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
               backgroundSize: '60px 60px',
               zIndex: -1,
             }}
@@ -87,43 +57,41 @@ export default function Operations() {
                 <span className="absolute inline-flex h-full w-full rounded-full bg-ember/50 animate-ping" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-ember" />
               </span>
-              Opérations en direct
+              {t.operations.live}
             </div>
 
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
               <div>
                 <h3 className="font-display text-2xl md:text-4xl font-semibold text-white tracking-tight max-w-xl">
-                  Logistique adaptée au rythme de vos opérations.
+                  {t.operations.bannerTitle}
                 </h3>
                 <p className="mt-4 text-white/70 text-sm md:text-base max-w-lg">
-                  Planification récurrente, consolidation des volumes, et distribution
-                  calibrée selon vos fréquences.
+                  {t.operations.bannerSub}
                 </p>
               </div>
               <div className="flex items-center gap-6 md:gap-10 text-white">
-                <Stat value={7} label="Familles produits" />
-                <Stat value={3} label="Secteurs servis" />
-                <Stat value="∞" label="Formats sur mesure" />
+                {t.operations.stats.map((s) => (
+                  <Stat key={s.label} value={s.value} label={s.label} />
+                ))}
               </div>
             </div>
           </div>
         </div>
 
         <div className="mt-6 md:mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {tiles.map((tile, i) => {
-            const Icon = tile.Icon;
+          {t.operations.tiles.map((tile, i) => {
+            const Icon = ICONS[i];
             return (
-              <a
+              <LangLink
                 key={tile.tag}
-                href={tile.href}
+                to={HREFS[i]}
                 className="reveal group relative aspect-[4/5] bg-ink-900 rounded-[4px] overflow-hidden block transition-all duration-500 hover:bg-ink-800"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div
                   className="absolute inset-0 opacity-[0.06] pointer-events-none"
                   style={{
-                    backgroundImage:
-                      'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
+                    backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
                     backgroundSize: '40px 40px',
                   }}
                   aria-hidden
@@ -131,8 +99,7 @@ export default function Operations() {
                 <div
                   className="absolute -top-20 -right-20 w-56 h-56 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                   style={{
-                    background:
-                      'radial-gradient(closest-side, rgba(232, 93, 31, 0.35), transparent 70%)',
+                    background: 'radial-gradient(closest-side, rgba(232, 93, 31, 0.35), transparent 70%)',
                   }}
                   aria-hidden
                 />
@@ -159,18 +126,12 @@ export default function Operations() {
                     </span>
                     <span className="w-8 h-8 rounded-full border border-white/15 flex items-center justify-center flex-shrink-0 group-hover:border-ember group-hover:bg-ember/10 transition-all duration-500">
                       <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
-                        <path
-                          d="M1 6H11M11 6L6.5 1.5M11 6L6.5 10.5"
-                          stroke="currentColor"
-                          strokeWidth="1.3"
-                          strokeLinecap="round"
-                          className="text-white/60 group-hover:text-ember transition-colors"
-                        />
+                        <path d="M1 6H11M11 6L6.5 1.5M11 6L6.5 10.5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" className="text-white/60 group-hover:text-ember transition-colors" />
                       </svg>
                     </span>
                   </div>
                 </div>
-              </a>
+              </LangLink>
             );
           })}
         </div>

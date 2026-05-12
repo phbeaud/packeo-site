@@ -6,15 +6,16 @@ import ApercuProduits from '../components/ApercuProduits';
 import Clienteles from '../components/Clienteles';
 import Contact from '../components/Contact';
 import useSEO from '../hooks/useSEO';
+import { useT } from '../i18n/I18nContext';
 
 export default function Accueil() {
+  const { t, lang } = useT();
   useSEO({
-    title: 'Packeo — Emballage au prix manufacturier direct | Approvisionnement B2B Québec',
-    description:
-      "Packeo approvisionne les entreprises en emballages directement auprès des manufacturiers. Sans intermédiaires, sans surcoûts. Pour restaurants, transformation alimentaire et secteurs industriels au Québec.",
-    keywords:
-      "emballage manufacturier, approvisionnement emballage Québec, boîtes carton entreprise, contenants alimentaires foodservice, sous vide transformation alimentaire, fournisseur emballage B2B",
-    path: '/',
+    title: t.seo.home.title,
+    description: t.seo.home.description,
+    keywords: t.seo.home.keywords,
+    path: `/${lang}`,
+    lang,
   });
 
   return (

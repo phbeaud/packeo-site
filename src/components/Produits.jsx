@@ -8,52 +8,20 @@ import {
   IcoProtection,
   IcoSurMesure,
 } from './Pictograms';
+import { useT, LangLink } from '../i18n/I18nContext';
 
 const BASE = import.meta.env.BASE_URL;
-
-const produits = [
-  {
-    title: 'Boîtes et cartons',
-    items: ['Ondulé simple et double', 'RSC, die-cut, mailer', 'Formats personnalisés'],
-    Icon: IcoBoite,
-    image: `${BASE}images/produits/reduire-sur-emballage.jpg`,
-  },
-  {
-    title: 'Contenants alimentaires',
-    items: ['Carton, pulpe, PP, PET', 'Chaud, froid, congélation', 'Certifications contact alimentaire'],
-    Icon: IcoContenant,
-    image: `${BASE}images/produits/1023large.webp`,
-  },
-  {
-    title: 'Sacs et pellicules',
-    items: ['LDPE, HDPE, compostables', 'Rouleaux, sachets, gousset', 'Impression personnalisée'],
-    Icon: IcoSac,
-    image: `${BASE}images/produits/Emb_123-128_CROP.jpg`,
-  },
-  {
-    title: 'Sous vide',
-    items: ['Sacs lisses et gaufrés', 'Rouleaux industriels', 'Machines et consommables'],
-    Icon: IcoSousVide,
-    image: `${BASE}images/produits/confezionamento-alimentare.i27211-kaxmrlR-w904-h452-l3.jpg`,
-  },
-  {
-    title: 'Pots, verres et couvercles',
-    items: ['Verre, PET, PP', 'Capsules et bouchons', 'Étiquetage disponible'],
-    Icon: IcoPot,
-    image: `${BASE}images/produits/verre-conso.jpg`,
-  },
-  {
-    title: 'Protection industrielle',
-    items: ['Pellicules étirables', 'Cerclage et sangles', 'Coussins et calage'],
-    Icon: IcoProtection,
-    image: null,
-  },
-  {
-    title: 'Sur mesure',
-    items: ['Développement manufacturier', 'Prototypage et validation', 'Production dédiée'],
-    Icon: IcoSurMesure,
-    image: `${BASE}images/produits/hero-banner.png`,
-  },
+const ICONS = [
+  IcoBoite, IcoContenant, IcoSac, IcoSousVide, IcoPot, IcoProtection, IcoSurMesure,
+];
+const IMAGES = [
+  `${BASE}images/produits/reduire-sur-emballage.jpg`,
+  `${BASE}images/produits/1023large.webp`,
+  `${BASE}images/produits/Emb_123-128_CROP.jpg`,
+  `${BASE}images/produits/confezionamento-alimentare.i27211-kaxmrlR-w904-h452-l3.jpg`,
+  `${BASE}images/produits/verre-conso.jpg`,
+  null,
+  `${BASE}images/produits/hero-banner.png`,
 ];
 
 function Visual({ image, Icon, alt }) {
@@ -79,73 +47,66 @@ function Visual({ image, Icon, alt }) {
 }
 
 export default function Produits() {
+  const { t } = useT();
   return (
     <section id="produits" className="relative bg-white py-28 md:py-40">
       <div className="container-page">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 mb-16 md:mb-24">
           <div className="max-w-3xl">
             <div className="section-label mb-8 reveal">
-              <span>Univers produits</span>
+              <span>{t.produits.eyebrow}</span>
             </div>
             <h2 className="reveal font-display font-semibold text-display-lg text-ink-900 tracking-ultra-tight">
-              Une couverture étendue,
+              {t.produits.titleA}
               <br />
-              <span className="text-ink-400">sans compromis sur la précision.</span>
+              <span className="text-ink-400">{t.produits.titleB}</span>
             </h2>
           </div>
-          <p
-            className="reveal text-ink-500 text-base md:text-lg max-w-sm leading-relaxed"
-            style={{ transitionDelay: '120ms' }}
-          >
-            Sept familles de produits, sélectionnées et qualifiées pour répondre à la
-            majorité des besoins d'emballage industriel.
+          <p className="reveal text-ink-500 text-base md:text-lg max-w-sm leading-relaxed" style={{ transitionDelay: '120ms' }}>
+            {t.produits.sub}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink-100 border border-ink-100">
-          {produits.map((p, i) => (
-            <a
-              key={p.title}
-              href="#contact"
-              className="reveal group relative bg-white flex flex-col transition-colors duration-500 hover:bg-bone overflow-hidden"
-              style={{ transitionDelay: `${(i % 3) * 80}ms` }}
-            >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Visual image={p.image} Icon={p.Icon} alt={`${p.title} — emballage Packeo`} />
-                <span className="absolute top-5 right-5 text-[10px] uppercase tracking-[0.22em] text-white font-medium px-2.5 py-1 rounded-full bg-ink-900/60 backdrop-blur-sm">
-                  0{i + 1}
-                </span>
-              </div>
+          {t.produits.items.map((p, i) => {
+            const Icon = ICONS[i];
+            const image = IMAGES[i];
+            return (
+              <LangLink
+                key={p.title}
+                to="/#contact"
+                className="reveal group relative bg-white flex flex-col transition-colors duration-500 hover:bg-bone overflow-hidden"
+                style={{ transitionDelay: `${(i % 3) * 80}ms` }}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Visual image={image} Icon={Icon} alt={`${p.title} — Packeo`} />
+                  <span className="absolute top-5 right-5 text-[10px] uppercase tracking-[0.22em] text-white font-medium px-2.5 py-1 rounded-full bg-ink-900/60 backdrop-blur-sm">
+                    0{i + 1}
+                  </span>
+                </div>
 
-              <div className="p-8 md:p-10 flex flex-col flex-1">
-                <h3 className="font-display text-xl md:text-2xl font-medium text-ink-900 mb-5 tracking-tight">
-                  {p.title}
-                </h3>
-                <ul className="space-y-2 mb-8">
-                  {p.items.map((item) => (
-                    <li
-                      key={item}
-                      className="text-[13px] md:text-sm text-ink-500 flex items-center gap-2.5"
-                    >
-                      <span className="w-3 h-px bg-ember" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-auto inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ember font-medium transition-all duration-300 group-hover:gap-3">
-                  Demander les formats
-                  <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
-                    <path
-                      d="M1 5H11M11 5L6.5 1M11 5L6.5 9"
-                      stroke="currentColor"
-                      strokeWidth="1.3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-            </a>
-          ))}
+                <div className="p-8 md:p-10 flex flex-col flex-1">
+                  <h3 className="font-display text-xl md:text-2xl font-medium text-ink-900 mb-5 tracking-tight">
+                    {p.title}
+                  </h3>
+                  <ul className="space-y-2 mb-8">
+                    {p.items.map((item) => (
+                      <li key={item} className="text-[13px] md:text-sm text-ink-500 flex items-center gap-2.5">
+                        <span className="w-3 h-px bg-ember" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-auto inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-ember font-medium transition-all duration-300 group-hover:gap-3">
+                    {t.produits.cta}
+                    <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
+                      <path d="M1 5H11M11 5L6.5 1M11 5L6.5 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
+                    </svg>
+                  </span>
+                </div>
+              </LangLink>
+            );
+          })}
         </div>
       </div>
     </section>

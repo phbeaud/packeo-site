@@ -3,36 +3,37 @@ import Produits from '../components/Produits';
 import Conveyor from '../components/Conveyor';
 import ContactCTA from '../components/ContactCTA';
 import useSEO from '../hooks/useSEO';
+import { useT } from '../i18n/I18nContext';
 
 export default function ProduitsPage() {
+  const { t, lang } = useT();
   useSEO({
-    title: "Produits d'emballage industriel | Packeo — Boîtes, contenants, sous vide",
-    description:
-      "Catalogue complet d'emballages industriels : boîtes et cartons, contenants alimentaires, sacs et pellicules, sous vide, pots et verres, protection industrielle, solutions sur mesure. Prix manufacturier direct.",
-    keywords:
-      "boîtes carton, contenants alimentaires, sacs kraft, sous vide, pots verre, pellicules étirables, emballage sur mesure, emballage industriel Québec",
-    path: '/produits',
+    title: t.seo.products.title,
+    description: t.seo.products.description,
+    keywords: t.seo.products.keywords,
+    path: `/${lang}/produits`,
+    lang,
   });
 
   return (
     <>
       <PageHero
-        eyebrow="Univers produits"
-        title="Sept familles."
-        accent="Une couverture industrielle complète."
-        sub="Sélectionnées et qualifiées pour répondre à la majorité des besoins d'emballage des restaurants, de la transformation alimentaire et des secteurs industriels."
+        eyebrow={t.pageHero.produits.eyebrow}
+        title={t.pageHero.produits.title}
+        accent={t.pageHero.produits.accent}
+        sub={t.pageHero.produits.sub}
       />
       <Produits />
       <Conveyor />
       <ContactCTA
         title={
           <>
-            Besoin d'un format précis ?
+            {t.contactCTA.produitsTitleA}
             <br />
-            <span className="text-ink-400">Demandez vos spécifications.</span>
+            <span className="text-ink-400">{t.contactCTA.produitsTitleB}</span>
           </>
         }
-        sub="Décrivez-nous votre produit, vos volumes et votre cadence — nous vous revenons avec les options qui s'appliquent à votre opération."
+        sub={t.contactCTA.produitsSub}
       />
     </>
   );

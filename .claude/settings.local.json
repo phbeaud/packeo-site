@@ -8,7 +8,10 @@
       "Bash(ls -la src)",
       "Bash(npm run *)",
       "Bash(lsof -ti:5173)",
-      "Bash(open \"/Users/philippe/Library/Mobile Documents/com~apple~CloudDocs/Site web Packeo/public/images\")"
+      "Bash(open \"/Users/philippe/Library/Mobile Documents/com~apple~CloudDocs/Site web Packeo/public/images\")",
+      "Bash(git add *)",
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Bilingual FR/EN with /:lang/ routing, hreflang tags, and language toggle\")",
+      "Bash(git push *)"
     ]
   }
 }

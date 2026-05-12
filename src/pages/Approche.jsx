@@ -5,24 +5,25 @@ import Operations from '../components/Operations';
 import Capacites from '../components/Capacites';
 import ContactCTA from '../components/ContactCTA';
 import useSEO from '../hooks/useSEO';
+import { useT } from '../i18n/I18nContext';
 
 export default function ApprochePage() {
+  const { t, lang } = useT();
   useSEO({
-    title: 'Notre approche | Packeo — Chaîne d\'approvisionnement structurée',
-    description:
-      "Comment Packeo élimine les intermédiaires de votre chaîne d'approvisionnement : importation directe, consolidation logistique, entreposage stratégique, livraisons planifiées. Quatre leviers pour réduire vos coûts réels.",
-    keywords:
-      "chaîne approvisionnement emballage, importation directe manufacturier, consolidation logistique, entreposage emballage Québec, distribution emballage planifiée",
-    path: '/approche',
+    title: t.seo.approach.title,
+    description: t.seo.approach.description,
+    keywords: t.seo.approach.keywords,
+    path: `/${lang}/approche`,
+    lang,
   });
 
   return (
     <>
       <PageHero
-        eyebrow="Approche & opérations"
-        title="Comment nous structurons"
-        accent="votre approvisionnement."
-        sub="Quatre leviers, une chaîne tracée, des capacités complètes — du sourcing manufacturier à la livraison sur votre quai."
+        eyebrow={t.pageHero.approche.eyebrow}
+        title={t.pageHero.approche.title}
+        accent={t.pageHero.approche.accent}
+        sub={t.pageHero.approche.sub}
       />
       <Approche />
       <Showcase />
@@ -31,12 +32,12 @@ export default function ApprochePage() {
       <ContactCTA
         title={
           <>
-            Validons ensemble
+            {t.contactCTA.approcheTitleA}
             <br />
-            <span className="text-ink-400">votre flux actuel.</span>
+            <span className="text-ink-400">{t.contactCTA.approcheTitleB}</span>
           </>
         }
-        sub="Nous proposons une lecture concrète de votre approvisionnement et identifions les leviers d'optimisation qui s'appliquent à vos opérations."
+        sub={t.contactCTA.approcheSub}
       />
     </>
   );
