@@ -16,7 +16,8 @@
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Real contact info: info@packeo.ca + 418 953-6132 \\(remove approvisionnement@\\)\")",
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"SEO boost: LocalBusiness + OfferCatalog + BreadcrumbList + crawler fallback + GSC placeholder\")",
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Activate Google Search Console verification\")",
-      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Activate Bing Webmaster Tools verification\")"
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Activate Bing Webmaster Tools verification\")",
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Add Certifications section \\(BRCGS, FSSC 22000, SQF, GFSI\\) on homepage\")"
     ]
   }
 }

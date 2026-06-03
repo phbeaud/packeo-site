@@ -189,6 +189,40 @@ export const translations = {
       titleB: 'Une couverture étendue.',
       cta: 'Voir tous les produits',
     },
+    certifications: {
+      eyebrow: 'Normes & certifications',
+      titleA: 'Manufacturiers qualifiés',
+      titleB: 'selon les normes mondiales.',
+      sub: "Nous travaillons exclusivement avec des fabricants reconnus par les standards les plus exigeants en salubrité et sécurité d'emballage alimentaire. Une exigence essentielle pour servir la transformation alimentaire à grande échelle.",
+      footer: "Capacité de sourcing alignée sur les exigences des grands transformateurs alimentaires canadiens.",
+      gfsiBadge: 'Reconnu GFSI',
+      items: [
+        {
+          code: 'BRCGS',
+          type: 'Standard',
+          name: 'Packaging Materials',
+          body: 'La norme la plus répandue mondialement pour les fabricants d\'emballages alimentaires.',
+        },
+        {
+          code: 'FSSC 22000',
+          type: 'Standard',
+          name: 'Avec programme emballage',
+          body: 'Schéma global de certification en sécurité des aliments incluant la chaîne d\'emballage.',
+        },
+        {
+          code: 'SQF',
+          type: 'Institute',
+          name: 'Safe Quality Food',
+          body: 'Standard reconnu en sécurité alimentaire applicable aux matériaux d\'emballage.',
+        },
+        {
+          code: 'GFSI',
+          type: 'Cadre',
+          name: 'Global Food Safety Initiative',
+          body: 'Cadre de reconnaissance internationale des certifications en sécurité alimentaire.',
+        },
+      ],
+    },
     contact: {
       eyebrow: 'Contact',
       titleA: 'Analysons',
@@ -470,6 +504,40 @@ export const translations = {
       titleA: 'Seven families.',
       titleB: 'Broad coverage.',
       cta: 'View all products',
+    },
+    certifications: {
+      eyebrow: 'Standards & certifications',
+      titleA: 'Manufacturers qualified',
+      titleB: 'against global standards.',
+      sub: 'We work exclusively with manufacturers recognized by the most demanding food safety and packaging standards. An essential requirement to serve large-scale food processors.',
+      footer: 'Sourcing capability aligned with the requirements of major Canadian food processors.',
+      gfsiBadge: 'GFSI recognized',
+      items: [
+        {
+          code: 'BRCGS',
+          type: 'Standard',
+          name: 'Packaging Materials',
+          body: 'The most widely adopted global standard for food packaging manufacturers.',
+        },
+        {
+          code: 'FSSC 22000',
+          type: 'Standard',
+          name: 'With packaging program',
+          body: 'Global food safety certification scheme covering the packaging supply chain.',
+        },
+        {
+          code: 'SQF',
+          type: 'Institute',
+          name: 'Safe Quality Food',
+          body: 'Recognized food safety standard applicable to packaging materials.',
+        },
+        {
+          code: 'GFSI',
+          type: 'Framework',
+          name: 'Global Food Safety Initiative',
+          body: 'International recognition framework for food safety certifications.',
+        },
+      ],
     },
     contact: {
       eyebrow: 'Contact',
