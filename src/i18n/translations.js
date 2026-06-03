@@ -198,6 +198,12 @@ export const translations = {
       gfsiBadge: 'Reconnu GFSI',
       items: [
         {
+          code: 'HACCP',
+          type: 'Système',
+          name: 'Analyse des dangers',
+          body: "Méthode internationale de gestion préventive des dangers alimentaires, fondement des programmes de salubrité.",
+        },
+        {
           code: 'BRCGS',
           type: 'Standard',
           name: 'Packaging Materials',
@@ -513,6 +519,12 @@ export const translations = {
       footer: 'Sourcing capability aligned with the requirements of major Canadian food processors.',
       gfsiBadge: 'GFSI recognized',
       items: [
+        {
+          code: 'HACCP',
+          type: 'System',
+          name: 'Hazard Analysis',
+          body: 'International preventive food hazard management method, foundation of all food safety programs.',
+        },
         {
           code: 'BRCGS',
           type: 'Standard',
