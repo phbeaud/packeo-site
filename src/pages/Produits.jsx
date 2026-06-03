@@ -13,6 +13,10 @@ export default function ProduitsPage() {
     keywords: t.seo.products.keywords,
     path: `/${lang}/produits`,
     lang,
+    breadcrumbs: [
+      { name: lang === 'en' ? 'Home' : 'Accueil', path: `/${lang}` },
+      { name: lang === 'en' ? 'Products' : 'Produits', path: `/${lang}/produits` },
+    ],
   });
 
   return (

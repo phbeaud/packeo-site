@@ -2,25 +2,31 @@ import { useEffect } from 'react';
 
 const SITE_URL = 'https://packeo.ca';
 const DEFAULT_IMAGE = `${SITE_URL}/images/produits/reduire-sur-emballage.jpg`;
+const BREADCRUMB_ID = 'packeo-breadcrumb-jsonld';
 
 /**
  * Per-page SEO hook — updates title, meta description, Open Graph,
- * Twitter Card, canonical, and hreflang tags dynamically.
+ * Twitter Card, canonical, hreflang and BreadcrumbList JSON-LD.
  */
-export default function useSEO({ title, description, image, path, keywords, lang = 'fr' }) {
+export default function useSEO({
+  title,
+  description,
+  image,
+  path,
+  keywords,
+  lang = 'fr',
+  breadcrumbs,
+}) {
   useEffect(() => {
     const fullUrl = `${SITE_URL}${path || ''}`;
     const imgUrl = image || DEFAULT_IMAGE;
     const ogLocale = lang === 'en' ? 'en_CA' : 'fr_CA';
 
-    // Title
     if (title) document.title = title;
 
-    // Standard meta
     setMeta('description', description);
     if (keywords) setMeta('keywords', keywords);
 
-    // Open Graph
     setMeta('og:title', title, 'property');
     setMeta('og:description', description, 'property');
     setMeta('og:image', imgUrl, 'property');
@@ -29,24 +35,24 @@ export default function useSEO({ title, description, image, path, keywords, lang
     setMeta('og:locale', ogLocale, 'property');
     setMeta('og:site_name', 'Packeo', 'property');
 
-    // Twitter Card
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', title);
     setMeta('twitter:description', description);
     setMeta('twitter:image', imgUrl);
 
-    // Canonical
     setCanonical(fullUrl);
 
-    // hreflang — link FR <-> EN equivalents
     if (path) {
-      // Replace current /lang/ prefix with each language to build pairs
       const stripped = path.replace(/^\/(fr|en)/, '');
       setHreflang('fr-ca', `${SITE_URL}/fr${stripped}`);
       setHreflang('en-ca', `${SITE_URL}/en${stripped}`);
       setHreflang('x-default', `${SITE_URL}/fr${stripped}`);
     }
-  }, [title, description, image, path, keywords, lang]);
+
+    if (breadcrumbs && breadcrumbs.length > 0) {
+      setBreadcrumbJsonLd(breadcrumbs);
+    }
+  }, [title, description, image, path, keywords, lang, breadcrumbs]);
 }
 
 function setMeta(name, content, attr = 'name') {
@@ -71,7 +77,9 @@ function setCanonical(url) {
 }
 
 function setHreflang(lang, url) {
-  let el = document.head.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+  let el = document.head.querySelector(
+    `link[rel="alternate"][hreflang="${lang}"]`
+  );
   if (!el) {
     el = document.createElement('link');
     el.setAttribute('rel', 'alternate');
@@ -79,4 +87,24 @@ function setHreflang(lang, url) {
     document.head.appendChild(el);
   }
   el.setAttribute('href', url);
+}
+
+function setBreadcrumbJsonLd(crumbs) {
+  let el = document.getElementById(BREADCRUMB_ID);
+  if (!el) {
+    el = document.createElement('script');
+    el.type = 'application/ld+json';
+    el.id = BREADCRUMB_ID;
+    document.head.appendChild(el);
+  }
+  el.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: `${SITE_URL}${c.path}`,
+    })),
+  });
 }

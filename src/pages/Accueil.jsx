@@ -16,6 +16,7 @@ export default function Accueil() {
     keywords: t.seo.home.keywords,
     path: `/${lang}`,
     lang,
+    breadcrumbs: [{ name: lang === 'en' ? 'Home' : 'Accueil', path: `/${lang}` }],
   });
 
   return (

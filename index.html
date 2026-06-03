@@ -15,8 +15,16 @@
       content="emballage manufacturier, approvisionnement emballage Québec, boîtes carton, contenants alimentaires, sous vide, sacs kraft, pots verre, fournisseur emballage B2B"
     />
     <meta name="author" content="Packeo" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <meta name="bingbot" content="index, follow" />
     <meta name="theme-color" content="#0A0B0D" />
+
+    <!-- Google Search Console verification — remplacer YOUR-CODE par la valeur fournie par GSC -->
+    <!-- <meta name="google-site-verification" content="YOUR-CODE" /> -->
+
+    <!-- Bing Webmaster verification — remplacer YOUR-CODE par la valeur fournie par Bing -->
+    <!-- <meta name="msvalidate.01" content="YOUR-CODE" /> -->
 
     <!-- Geo metadata (Québec, Canada) -->
     <meta name="geo.region" content="CA-QC" />
@@ -69,29 +77,36 @@
       rel="stylesheet"
     />
 
-    <!-- JSON-LD — Organization schema for search engine rich results -->
+    <!-- JSON-LD — Organization + LocalBusiness for Google rich results -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
+        "@id": "https://packeo.ca/#organization",
         "name": "Packeo",
         "alternateName": "Packeo Emballage",
         "url": "https://packeo.ca/",
-        "logo": "https://packeo.ca/favicon.svg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://packeo.ca/favicon.svg",
+          "width": 512,
+          "height": 512
+        },
+        "image": "https://packeo.ca/images/produits/reduire-sur-emballage.jpg",
         "description": "Approvisionnement structuré en emballages au prix manufacturier direct. Sans intermédiaires, pour restaurants, transformation alimentaire et secteurs industriels.",
         "slogan": "Emballage au prix manufacturier direct",
-        "foundingLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressRegion": "QC",
-            "addressCountry": "CA"
-          }
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "QC",
+          "addressCountry": "CA"
         },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Canada"
-        },
+        "areaServed": [
+          { "@type": "Country", "name": "Canada" },
+          { "@type": "AdministrativeArea", "name": "Québec" },
+          { "@type": "City", "name": "Québec" },
+          { "@type": "City", "name": "Montréal" }
+        ],
         "knowsAbout": [
           "Emballage industriel",
           "Boîtes et cartons",
@@ -100,27 +115,98 @@
           "Sacs et pellicules",
           "Pots et verres",
           "Protection industrielle",
-          "Approvisionnement B2B"
+          "Approvisionnement B2B",
+          "Importation manufacturier",
+          "Logistique consolidation"
         ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "email": "info@packeo.ca",
-          "telephone": "+1-418-953-6132",
-          "contactType": "customer service",
-          "areaServed": "CA",
-          "availableLanguage": ["French", "English"]
-        }
+        "telephone": "+1-418-953-6132",
+        "email": "info@packeo.ca",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "email": "info@packeo.ca",
+            "telephone": "+1-418-953-6132",
+            "contactType": "customer service",
+            "areaServed": "CA",
+            "availableLanguage": ["French", "English"]
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "info@packeo.ca",
+            "telephone": "+1-418-953-6132",
+            "contactType": "sales",
+            "areaServed": "CA",
+            "availableLanguage": ["French", "English"]
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Univers produits Packeo",
+          "itemListElement": [
+            {
+              "@type": "OfferCatalog",
+              "name": "Boîtes et cartons",
+              "description": "Ondulé simple et double, RSC, die-cut, mailer, formats personnalisés."
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Contenants alimentaires",
+              "description": "Carton, pulpe, PP, PET. Certifications contact alimentaire. Chaud, froid, congélation."
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Sacs et pellicules",
+              "description": "LDPE, HDPE, compostables. Rouleaux, sachets, gousset. Impression personnalisée."
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Emballage sous vide",
+              "description": "Sacs lisses et gaufrés, rouleaux industriels, machines et consommables."
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Pots, verres et couvercles",
+              "description": "Verre, PET, PP. Capsules et bouchons. Étiquetage disponible."
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Protection industrielle",
+              "description": "Pellicules étirables, cerclage et sangles, coussins et calage."
+            },
+            {
+              "@type": "OfferCatalog",
+              "name": "Emballage sur mesure",
+              "description": "Développement manufacturier, prototypage et validation, production dédiée."
+            }
+          ]
+        },
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Approvisionnement structuré en emballage",
+              "description": "Importation directe, consolidation logistique, entreposage stratégique, livraisons planifiées pour entreprises."
+            },
+            "areaServed": "CA"
+          }
+        ]
       }
     </script>
 
-    <!-- JSON-LD — WebSite schema -->
+    <!-- JSON-LD — WebSite schema with potential search action -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
+        "@id": "https://packeo.ca/#website",
         "name": "Packeo",
+        "alternateName": "Packeo Emballage",
         "url": "https://packeo.ca/",
-        "inLanguage": ["fr-CA", "en-CA"]
+        "inLanguage": ["fr-CA", "en-CA"],
+        "publisher": {
+          "@id": "https://packeo.ca/#organization"
+        }
       }
     </script>
 
@@ -146,7 +232,63 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- SEO fallback content for crawlers / no-JS users.
+           React replaces this with the live UI on mount. -->
+      <noscript>
+        <style>
+          body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 40px 24px; color: #14161A; }
+          a { color: #E85D1F; }
+          h1 { font-size: 32px; line-height: 1.1; }
+          h2 { font-size: 22px; margin-top: 32px; }
+          ul { line-height: 1.7; }
+        </style>
+      </noscript>
+      <div style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden">
+        <h1>Packeo — Emballage au prix manufacturier direct</h1>
+        <p>
+          Packeo approvisionne les entreprises en emballages directement auprès des
+          manufacturiers, sans intermédiaires. Pour restaurants, transformation
+          alimentaire et secteurs industriels au Québec et au Canada.
+        </p>
+        <h2>Univers produits</h2>
+        <ul>
+          <li>Boîtes et cartons — ondulé simple et double, RSC, die-cut, mailer, formats personnalisés</li>
+          <li>Contenants alimentaires — carton, pulpe, PP, PET, certifications contact alimentaire</li>
+          <li>Sacs et pellicules — LDPE, HDPE, compostables, rouleaux, sachets, gousset</li>
+          <li>Sous vide — sacs lisses et gaufrés, rouleaux industriels, machines et consommables</li>
+          <li>Pots, verres et couvercles — verre, PET, PP, capsules et bouchons, étiquetage disponible</li>
+          <li>Protection industrielle — pellicules étirables, cerclage et sangles, coussins et calage</li>
+          <li>Sur mesure — développement manufacturier, prototypage et validation, production dédiée</li>
+        </ul>
+        <h2>Clientèles servies</h2>
+        <ul>
+          <li>Restaurants et foodservice — chaînes multi-sites, restaurants indépendants, traiteurs</li>
+          <li>Transformation alimentaire — transformateurs de viandes, boulangerie, pâtisserie, produits fins</li>
+          <li>Industriel et manufacturier — manufacturiers multi-produits, centres de distribution, exportateurs</li>
+        </ul>
+        <h2>Approche</h2>
+        <ul>
+          <li>Importation directe depuis les manufacturiers</li>
+          <li>Réduction des intermédiaires pour éliminer les surcoûts</li>
+          <li>Flexibilité logistique adaptée à votre cadence</li>
+          <li>Entreposage stratégique sur demande</li>
+        </ul>
+        <h2>Contact</h2>
+        <p>
+          <strong>Email :</strong> <a href="mailto:info@packeo.ca">info@packeo.ca</a><br />
+          <strong>Téléphone :</strong> <a href="tel:+14189536132">418 953-6132</a><br />
+          <strong>Région :</strong> Québec, Canada
+        </p>
+        <p>
+          <a href="/fr">Site français</a> · <a href="/en">English version</a>
+        </p>
+        <p>
+          <a href="/fr/produits">Produits</a> ·
+          <a href="/fr/approche">Approche & opérations</a>
+        </p>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

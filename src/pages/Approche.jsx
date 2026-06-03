@@ -15,6 +15,10 @@ export default function ApprochePage() {
     keywords: t.seo.approach.keywords,
     path: `/${lang}/approche`,
     lang,
+    breadcrumbs: [
+      { name: lang === 'en' ? 'Home' : 'Accueil', path: `/${lang}` },
+      { name: lang === 'en' ? 'Approach' : 'Approche', path: `/${lang}/approche` },
+    ],
   });
 
   return (
