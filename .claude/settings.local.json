@@ -28,7 +28,8 @@
       "Bash(git gc *)",
       "Bash(git fetch *)",
       "Bash(echo \"=== EXIT: $? ===\")",
-      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Add Team page with 4 member bios and photos \\(FR/EN\\)\")"
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Add Team page with 4 member bios and photos \\(FR/EN\\)\")",
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Reorder team: Isabelle first; map photos by name instead of index\")"
     ]
   }
 }

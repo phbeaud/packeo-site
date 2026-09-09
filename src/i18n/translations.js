@@ -234,6 +234,21 @@ export const translations = {
       focusLabel: 'Champs d\'expertise',
       members: [
         {
+          name: 'Isabelle Paradis',
+          role: 'Vice-présidente, ventes et partenariats',
+          bio: [
+            "Isabelle cumule 15 ans en développement des affaires B2B. Fondatrice de Carrefour Affaires Santé et impliquée chez Koprana Supply, elle a développé des marchés et négocié des ententes commerciales dans les secteurs de la santé, des médias, des services aux entreprises et de la distribution.",
+            "Son parcours couvre le développement de comptes majeurs, la négociation commerciale, la création de partenariats B2B et le développement de nouveaux marchés.",
+            "Chez Packeo, Isabelle dirige le développement des affaires et les partenariats. Elle accompagne les clients dans l'analyse de leurs besoins, la négociation des ententes d'approvisionnement et le développement de relations commerciales à long terme.",
+          ],
+          focus: [
+            'Comptes majeurs',
+            'Négociation commerciale',
+            'Partenariats B2B',
+            'Développement de marchés',
+          ],
+        },
+        {
           name: 'Philippe Beaudoin',
           role: 'Directeur, développement des affaires',
           bio: [
@@ -260,21 +275,6 @@ export const translations = {
             'Structuration des processus',
             'Suivi financier',
             'Exécution de projets',
-          ],
-        },
-        {
-          name: 'Isabelle Paradis',
-          role: 'Vice-présidente, ventes et partenariats',
-          bio: [
-            "Isabelle cumule 15 ans en développement des affaires B2B. Fondatrice de Carrefour Affaires Santé et impliquée chez Koprana Supply, elle a développé des marchés et négocié des ententes commerciales dans les secteurs de la santé, des médias, des services aux entreprises et de la distribution.",
-            "Son parcours couvre le développement de comptes majeurs, la négociation commerciale, la création de partenariats B2B et le développement de nouveaux marchés.",
-            "Chez Packeo, Isabelle dirige le développement des affaires et les partenariats. Elle accompagne les clients dans l'analyse de leurs besoins, la négociation des ententes d'approvisionnement et le développement de relations commerciales à long terme.",
-          ],
-          focus: [
-            'Comptes majeurs',
-            'Négociation commerciale',
-            'Partenariats B2B',
-            'Développement de marchés',
           ],
         },
         {
@@ -392,8 +392,8 @@ export const translations = {
       },
       team: {
         title: 'Équipe | Packeo — Développement des affaires, opérations et partenariats',
-        description: "L'équipe Packeo : Philippe Beaudoin (développement des affaires), Daniel Mireault (administration et opérations), Isabelle Paradis (ventes et partenariats) et Alexandre Benoit (logistique et administration). Expertise en approvisionnement international, importation et logistique B2B.",
-        keywords: 'équipe Packeo, Philippe Beaudoin, Daniel Mireault, Isabelle Paradis, Alexandre Benoit, approvisionnement B2B Québec, développement des affaires emballage',
+        description: "L'équipe Packeo : Isabelle Paradis (ventes et partenariats), Philippe Beaudoin (développement des affaires), Daniel Mireault (administration et opérations) et Alexandre Benoit (logistique et administration). Expertise en approvisionnement international, importation et logistique B2B.",
+        keywords: 'équipe Packeo, Isabelle Paradis, Philippe Beaudoin, Daniel Mireault, Alexandre Benoit, approvisionnement B2B Québec, développement des affaires emballage',
       },
     },
   },
@@ -634,6 +634,21 @@ export const translations = {
       focusLabel: 'Areas of expertise',
       members: [
         {
+          name: 'Isabelle Paradis',
+          role: 'Vice-President, Sales and Partnerships',
+          bio: [
+            'Isabelle brings 15 years of B2B business development experience. Founder of Carrefour Affaires Santé and involved with Koprana Supply, she has developed markets and negotiated commercial agreements across healthcare, media, business services and distribution.',
+            'Her background covers major account development, commercial negotiation, B2B partnership building and new market development.',
+            'At Packeo, Isabelle leads business development and partnerships. She supports clients in analyzing their needs, negotiating supply agreements and building long-term commercial relationships.',
+          ],
+          focus: [
+            'Major accounts',
+            'Commercial negotiation',
+            'B2B partnerships',
+            'Market development',
+          ],
+        },
+        {
           name: 'Philippe Beaudoin',
           role: 'Director, Business Development',
           bio: [
@@ -660,21 +675,6 @@ export const translations = {
             'Process structuring',
             'Financial monitoring',
             'Project execution',
-          ],
-        },
-        {
-          name: 'Isabelle Paradis',
-          role: 'Vice-President, Sales and Partnerships',
-          bio: [
-            'Isabelle brings 15 years of B2B business development experience. Founder of Carrefour Affaires Santé and involved with Koprana Supply, she has developed markets and negotiated commercial agreements across healthcare, media, business services and distribution.',
-            'Her background covers major account development, commercial negotiation, B2B partnership building and new market development.',
-            'At Packeo, Isabelle leads business development and partnerships. She supports clients in analyzing their needs, negotiating supply agreements and building long-term commercial relationships.',
-          ],
-          focus: [
-            'Major accounts',
-            'Commercial negotiation',
-            'B2B partnerships',
-            'Market development',
           ],
         },
         {
@@ -792,8 +792,8 @@ export const translations = {
       },
       team: {
         title: 'Team | Packeo — Business development, operations and partnerships',
-        description: 'The Packeo team: Philippe Beaudoin (business development), Daniel Mireault (administration and operations), Isabelle Paradis (sales and partnerships) and Alexandre Benoit (logistics and administration). Expertise in international sourcing, importing and B2B logistics.',
-        keywords: 'Packeo team, Philippe Beaudoin, Daniel Mireault, Isabelle Paradis, Alexandre Benoit, B2B supply Quebec, packaging business development',
+        description: 'The Packeo team: Isabelle Paradis (sales and partnerships), Philippe Beaudoin (business development), Daniel Mireault (administration and operations) and Alexandre Benoit (logistics and administration). Expertise in international sourcing, importing and B2B logistics.',
+        keywords: 'Packeo team, Isabelle Paradis, Philippe Beaudoin, Daniel Mireault, Alexandre Benoit, B2B supply Quebec, packaging business development',
       },
     },
   },

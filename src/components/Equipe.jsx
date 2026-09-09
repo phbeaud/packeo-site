@@ -3,12 +3,14 @@ import { useT } from '../i18n/I18nContext';
 
 const BASE = import.meta.env.BASE_URL;
 
-const PHOTOS = [
-  `${BASE}images/equipe/philippe-beaudoin.jpg`,
-  `${BASE}images/equipe/daniel-mireault.jpg`,
-  `${BASE}images/equipe/isabelle-paradis.jpg`,
-  `${BASE}images/equipe/alexandre-benoit.jpg`,
-];
+// Keyed by name so photos always follow the right person,
+// regardless of the display order set in translations.
+const PHOTO_BY_NAME = {
+  'Isabelle Paradis': `${BASE}images/equipe/isabelle-paradis.jpg`,
+  'Philippe Beaudoin': `${BASE}images/equipe/philippe-beaudoin.jpg`,
+  'Daniel Mireault': `${BASE}images/equipe/daniel-mireault.jpg`,
+  'Alexandre Benoit': `${BASE}images/equipe/alexandre-benoit.jpg`,
+};
 
 function initials(name) {
   return name
@@ -84,7 +86,7 @@ export default function Equipe() {
                 }`}
               >
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] bg-ink-100">
-                  <Portrait src={PHOTOS[i]} name={m.name} />
+                  <Portrait src={PHOTO_BY_NAME[m.name]} name={m.name} />
                   <div className="absolute inset-0 ring-1 ring-inset ring-black/5 pointer-events-none" />
                 </div>
               </div>
