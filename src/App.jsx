@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Accueil from './pages/Accueil';
 import Produits from './pages/Produits';
 import Approche from './pages/Approche';
+import Equipe from './pages/Equipe';
 import useReveal from './hooks/useReveal';
 import { I18nProvider } from './i18n/I18nContext';
 
@@ -67,6 +68,7 @@ function LocalizedApp() {
             <Route index element={<Accueil />} />
             <Route path="produits" element={<Produits />} />
             <Route path="approche" element={<Approche />} />
+            <Route path="equipe" element={<Equipe />} />
             <Route path="*" element={<Accueil />} />
           </Routes>
         </main>

@@ -15,6 +15,7 @@ export default function Nav() {
     { label: t.nav.home, to: '/' },
     { label: t.nav.products, to: '/produits' },
     { label: t.nav.approach, to: '/approche' },
+    { label: t.nav.team, to: '/equipe' },
   ];
 
   useEffect(() => {

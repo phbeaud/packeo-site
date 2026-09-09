@@ -18,7 +18,17 @@
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Activate Google Search Console verification\")",
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Activate Bing Webmaster Tools verification\")",
       "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Add Certifications section \\(BRCGS, FSSC 22000, SQF, GFSI\\) on homepage\")",
-      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Add HACCP to Certifications section \\(5 columns, FR + EN\\)\")"
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Add HACCP to Certifications section \\(5 columns, FR + EN\\)\")",
+      "Bash(open \"/Users/philippe/Library/Mobile Documents/com~apple~CloudDocs/Site web Packeo/public/images/equipe\")",
+      "Bash(sips -Z 1200 -s format jpeg -s formatOptions 82 phil.png --out philippe-beaudoin.jpg)",
+      "Bash(sips -Z 1200 -s format jpeg -s formatOptions 82 dan.png --out daniel-mireault.jpg)",
+      "Bash(sips -Z 1200 -s format jpeg -s formatOptions 82 isa.png --out isabelle-paradis.jpg)",
+      "Bash(sips -Z 1200 -s format jpeg -s formatOptions 82 alex.png --out alexandre-benoit.jpg)",
+      "Bash(rm -f phil.png dan.png isa.png alex.png)",
+      "Bash(git gc *)",
+      "Bash(git fetch *)",
+      "Bash(echo \"=== EXIT: $? ===\")",
+      "Bash(git -c user.email=\"pbeaudoin@neobexgroup.com\" -c user.name=\"Philippe Beaudoin\" commit -m \"Add Team page with 4 member bios and photos \\(FR/EN\\)\")"
     ]
   }
 }

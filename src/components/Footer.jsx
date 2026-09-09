@@ -25,6 +25,7 @@ export default function Footer() {
               <li><LangLink to="/" className="hover:text-white transition-colors">{t.footer.links.home}</LangLink></li>
               <li><LangLink to="/produits" className="hover:text-white transition-colors">{t.footer.links.products}</LangLink></li>
               <li><LangLink to="/approche" className="hover:text-white transition-colors">{t.footer.links.approach}</LangLink></li>
+              <li><LangLink to="/equipe" className="hover:text-white transition-colors">{t.footer.links.team}</LangLink></li>
               <li><LangLink to="/#modele" className="hover:text-white transition-colors">{t.footer.links.modele}</LangLink></li>
               <li><LangLink to="/#clienteles" className="hover:text-white transition-colors">{t.footer.links.clienteles}</LangLink></li>
             </ul>

@@ -6,6 +6,7 @@ export const translations = {
       home: 'Accueil',
       products: 'Produits',
       approach: 'Approche',
+      team: 'Équipe',
       cta: 'Analyser mon flux',
       menu: 'Menu',
     },
@@ -229,6 +230,71 @@ export const translations = {
         },
       ],
     },
+    equipe: {
+      focusLabel: 'Champs d\'expertise',
+      members: [
+        {
+          name: 'Philippe Beaudoin',
+          role: 'Directeur, développement des affaires',
+          bio: [
+            "Philippe œuvre en développement des affaires, stratégie commerciale et approvisionnement international B2B. Son parcours chez Neobex Group l'a amené à développer des marchés, structurer des stratégies de croissance et piloter des projets d'importation auprès de fournisseurs internationaux.",
+            "Son expérience couvre la négociation fournisseurs, l'analyse des coûts d'approvisionnement, le sourcing, l'importation, la logistique internationale et le développement d'ententes commerciales adaptées aux volumes et aux contraintes opérationnelles des clients.",
+            "Chez Packeo, Philippe est responsable de la stratégie de développement des affaires et de l'acquisition de nouveaux comptes. Il accompagne les clients dans l'optimisation de leur stratégie d'approvisionnement, de l'analyse du besoin jusqu'à la mise en place de solutions d'importation compétitives et durables.",
+          ],
+          focus: [
+            'Négociation fournisseurs',
+            'Sourcing et importation',
+            'Analyse des coûts',
+            'Logistique internationale',
+          ],
+        },
+        {
+          name: 'Daniel Mireault',
+          role: 'Directeur administratif et des opérations',
+          bio: [
+            "Daniel apporte une expertise en gestion des opérations, administration et structuration des processus d'affaires. Chez Neobex Group, il supervise la coordination opérationnelle, la logistique, les systèmes, le suivi financier et l'exécution des projets.",
+            "Chez Packeo, il veille à transformer les stratégies commerciales en opérations efficaces, rigoureuses et évolutives, tout en assurant la fluidité entre ventes, approvisionnement et livraison au quotidien.",
+          ],
+          focus: [
+            'Gestion des opérations',
+            'Structuration des processus',
+            'Suivi financier',
+            'Exécution de projets',
+          ],
+        },
+        {
+          name: 'Isabelle Paradis',
+          role: 'Vice-présidente, ventes et partenariats',
+          bio: [
+            "Isabelle cumule 15 ans en développement des affaires B2B. Fondatrice de Carrefour Affaires Santé et impliquée chez Koprana Supply, elle a développé des marchés et négocié des ententes commerciales dans les secteurs de la santé, des médias, des services aux entreprises et de la distribution.",
+            "Son parcours couvre le développement de comptes majeurs, la négociation commerciale, la création de partenariats B2B et le développement de nouveaux marchés.",
+            "Chez Packeo, Isabelle dirige le développement des affaires et les partenariats. Elle accompagne les clients dans l'analyse de leurs besoins, la négociation des ententes d'approvisionnement et le développement de relations commerciales à long terme.",
+          ],
+          focus: [
+            'Comptes majeurs',
+            'Négociation commerciale',
+            'Partenariats B2B',
+            'Développement de marchés',
+          ],
+        },
+        {
+          name: 'Alexandre Benoit',
+          role: 'Coordonnateur, logistique et administration',
+          bio: [
+            "Alexandre assure la coordination des activités logistiques et administratives de Packeo et contribue directement à la fluidité des opérations quotidiennes.",
+            "Rigoureux et organisé, il intervient dans le suivi des commandes, la coordination avec les différents intervenants, la gestion documentaire ainsi que le soutien administratif nécessaire au bon déroulement des opérations. Il veille à ce que l'information circule efficacement et que les différentes étapes, de la commande jusqu'au suivi opérationnel, soient réalisées avec précision.",
+            "Dans un environnement où plusieurs fournisseurs, clients et partenaires doivent être coordonnés simultanément, il joue un rôle important dans le respect des échéanciers et le suivi des dossiers. Son travail permet à l'équipe commerciale et à la direction de maintenir une vision claire de l'avancement des opérations et d'intervenir rapidement lorsque des ajustements sont nécessaires.",
+            "Son approche méthodique, sa polyvalence et son souci du détail contribuent à assurer une exécution fiable et structurée des activités de Packeo.",
+          ],
+          focus: [
+            'Suivi des commandes',
+            'Coordination fournisseurs',
+            'Gestion documentaire',
+            'Respect des échéanciers',
+          ],
+        },
+      ],
+    },
     contact: {
       eyebrow: 'Contact',
       titleA: 'Analysons',
@@ -284,6 +350,12 @@ export const translations = {
         accent: 'votre approvisionnement.',
         sub: 'Quatre leviers, une chaîne tracée, des capacités complètes — du sourcing manufacturier à la livraison sur votre quai.',
       },
+      equipe: {
+        eyebrow: 'Équipe',
+        title: 'Des gens',
+        accent: "d'opérations et de terrain.",
+        sub: "Développement des affaires, opérations et partenariats — une équipe qui connaît la réalité de l'approvisionnement industriel et alimentaire.",
+      },
     },
     footer: {
       tagline: 'Approvisionnement structuré pour restaurants, transformation alimentaire et secteurs industriels.',
@@ -293,6 +365,7 @@ export const translations = {
         home: 'Accueil',
         products: 'Produits',
         approach: 'Approche',
+        team: 'Équipe',
         modele: "Modèle d'affaires",
         clienteles: 'Clientèles',
         analysis: 'Recevoir une analyse',
@@ -317,6 +390,11 @@ export const translations = {
         description: "Comment Packeo élimine les intermédiaires de votre chaîne d'approvisionnement : importation directe, consolidation logistique, entreposage stratégique, livraisons planifiées. Quatre leviers pour réduire vos coûts réels.",
         keywords: 'chaîne approvisionnement emballage, importation directe manufacturier, consolidation logistique, entreposage emballage Québec, distribution emballage planifiée',
       },
+      team: {
+        title: 'Équipe | Packeo — Développement des affaires, opérations et partenariats',
+        description: "L'équipe Packeo : Philippe Beaudoin (développement des affaires), Daniel Mireault (administration et opérations), Isabelle Paradis (ventes et partenariats) et Alexandre Benoit (logistique et administration). Expertise en approvisionnement international, importation et logistique B2B.",
+        keywords: 'équipe Packeo, Philippe Beaudoin, Daniel Mireault, Isabelle Paradis, Alexandre Benoit, approvisionnement B2B Québec, développement des affaires emballage',
+      },
     },
   },
 
@@ -328,6 +406,7 @@ export const translations = {
       home: 'Home',
       products: 'Products',
       approach: 'Approach',
+      team: 'Team',
       cta: 'Analyze my supply',
       menu: 'Menu',
     },
@@ -551,6 +630,71 @@ export const translations = {
         },
       ],
     },
+    equipe: {
+      focusLabel: 'Areas of expertise',
+      members: [
+        {
+          name: 'Philippe Beaudoin',
+          role: 'Director, Business Development',
+          bio: [
+            'Philippe works in business development, commercial strategy and international B2B sourcing. His career at Neobex Group led him to develop markets, structure growth strategies and lead import projects with international suppliers.',
+            "His experience covers supplier negotiation, supply cost analysis, sourcing, importing, international logistics and the development of commercial agreements adapted to clients' volumes and operational constraints.",
+            'At Packeo, Philippe leads business development strategy and new account acquisition. He supports clients in optimizing their supply strategy — from needs analysis through to competitive, sustainable import solutions.',
+          ],
+          focus: [
+            'Supplier negotiation',
+            'Sourcing and importing',
+            'Cost analysis',
+            'International logistics',
+          ],
+        },
+        {
+          name: 'Daniel Mireault',
+          role: 'Director, Administration and Operations',
+          bio: [
+            'Daniel brings expertise in operations management, administration and business process structuring. At Neobex Group, he oversees operational coordination, logistics, systems, financial monitoring and project execution.',
+            'At Packeo, he ensures commercial strategies translate into efficient, rigorous and scalable operations — while keeping the flow between sales, supply and daily delivery seamless.',
+          ],
+          focus: [
+            'Operations management',
+            'Process structuring',
+            'Financial monitoring',
+            'Project execution',
+          ],
+        },
+        {
+          name: 'Isabelle Paradis',
+          role: 'Vice-President, Sales and Partnerships',
+          bio: [
+            'Isabelle brings 15 years of B2B business development experience. Founder of Carrefour Affaires Santé and involved with Koprana Supply, she has developed markets and negotiated commercial agreements across healthcare, media, business services and distribution.',
+            'Her background covers major account development, commercial negotiation, B2B partnership building and new market development.',
+            'At Packeo, Isabelle leads business development and partnerships. She supports clients in analyzing their needs, negotiating supply agreements and building long-term commercial relationships.',
+          ],
+          focus: [
+            'Major accounts',
+            'Commercial negotiation',
+            'B2B partnerships',
+            'Market development',
+          ],
+        },
+        {
+          name: 'Alexandre Benoit',
+          role: 'Coordinator, Logistics and Administration',
+          bio: [
+            "Alexandre coordinates Packeo's logistics and administrative activities, contributing directly to the fluidity of daily operations.",
+            'Rigorous and organized, he handles order tracking, coordination with stakeholders, document management and the administrative support required to keep operations running. He ensures information flows efficiently and that every step — from order placement to operational follow-up — is carried out with precision.',
+            'In an environment where multiple suppliers, clients and partners must be coordinated simultaneously, he plays a key role in meeting deadlines and tracking files. His work gives the sales team and management a clear view of operational progress and the ability to intervene quickly when adjustments are needed.',
+            "His methodical approach, versatility and attention to detail help ensure reliable, structured execution across Packeo's activities.",
+          ],
+          focus: [
+            'Order tracking',
+            'Supplier coordination',
+            'Document management',
+            'Deadline management',
+          ],
+        },
+      ],
+    },
     contact: {
       eyebrow: 'Contact',
       titleA: "Let's analyze",
@@ -606,6 +750,12 @@ export const translations = {
         accent: 'your supply chain.',
         sub: 'Four levers, a traced chain, complete capabilities — from manufacturer sourcing to delivery at your dock.',
       },
+      equipe: {
+        eyebrow: 'Team',
+        title: 'Operators',
+        accent: 'who know the field.',
+        sub: 'Business development, operations and partnerships — a team that understands the reality of industrial and food supply chains.',
+      },
     },
     footer: {
       tagline: 'Structured supply for restaurants, food processing, and industrial sectors.',
@@ -615,6 +765,7 @@ export const translations = {
         home: 'Home',
         products: 'Products',
         approach: 'Approach',
+        team: 'Team',
         modele: 'Business model',
         clienteles: 'Clientele',
         analysis: 'Receive an analysis',
@@ -638,6 +789,11 @@ export const translations = {
         title: 'Our approach | Packeo — Structured supply chain',
         description: 'How Packeo removes middlemen from your supply chain: direct import, logistics consolidation, strategic warehousing, scheduled deliveries. Four levers to reduce your real costs.',
         keywords: 'packaging supply chain, direct manufacturer import, logistics consolidation, packaging warehousing Quebec, planned packaging distribution',
+      },
+      team: {
+        title: 'Team | Packeo — Business development, operations and partnerships',
+        description: 'The Packeo team: Philippe Beaudoin (business development), Daniel Mireault (administration and operations), Isabelle Paradis (sales and partnerships) and Alexandre Benoit (logistics and administration). Expertise in international sourcing, importing and B2B logistics.',
+        keywords: 'Packeo team, Philippe Beaudoin, Daniel Mireault, Isabelle Paradis, Alexandre Benoit, B2B supply Quebec, packaging business development',
       },
     },
   },
