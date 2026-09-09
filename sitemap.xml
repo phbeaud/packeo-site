@@ -61,4 +61,23 @@
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://packeo.ca/en/approche" />
   </url>
 
+  <!-- FR Équipe -->
+  <url>
+    <loc>https://packeo.ca/fr/equipe</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://packeo.ca/fr/equipe" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://packeo.ca/en/equipe" />
+  </url>
+  <!-- EN Team -->
+  <url>
+    <loc>https://packeo.ca/en/equipe</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://packeo.ca/fr/equipe" />
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://packeo.ca/en/equipe" />
+  </url>
+
 </urlset>
